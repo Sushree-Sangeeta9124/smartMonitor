@@ -1,0 +1,5 @@
+build/
+*.o
+logs/activity.log
+.idea/
+.vscode/
