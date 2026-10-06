@@ -1,56 +1,56 @@
 # Smart Linux System & File Activity Monitor
 
-A C++ based Linux project for monitoring system resources, running processes, and file activity.
+A C++ based Linux application that monitors system resources, running processes, and file system activities in real time.
 
-## 📌 Features
+## Project Overview
 
-- 🖥️ CPU usage monitoring
-- 💾 RAM usage monitoring
-- 💿 Disk usage monitoring
-- ⚙️ Running process monitoring using `/proc`
-- 📁 File activity monitoring using Linux `inotify`
-- 🚨 High CPU and RAM usage alerts
-- 📝 Timestamped activity logging
-- 📊 Simple terminal dashboard
+Smart Monitor is a lightweight terminal-based monitoring application developed using C++ and Linux system interfaces.
 
-## 🛠️ Technologies Used
+It monitors CPU, RAM, disk usage, running processes, and file activities. It also provides alerts for high resource usage and records important activities in a log file.
 
-- **C++**
-- **Linux**
-- **CMake**
-- **C++ STL**
-- **Multithreading and Mutex**
-- **Linux `/proc` interface**
-- **Linux `inotify`**
-- **Git**
+## Key Features
 
-## 📋 Requirements
+- CPU usage monitoring
+- RAM usage monitoring
+- Disk usage monitoring
+- Running process monitoring
+- Process memory usage monitoring
+- File creation, deletion and modification detection
+- File movement detection
+- CPU and RAM usage alerts
+- Timestamped activity logging
+- Terminal-based monitoring dashboard
+- Multithreading for file monitoring
 
-- Ubuntu/Linux environment
-- g++ compiler
+## System Architecture
+
+![Smart Linux Monitor Architecture](docs/architecture.png.jpeg)
+
+The project is divided into four main components:
+
+- **SystemMonitor** – Monitors CPU, RAM and disk usage.
+- **ProcessMonitor** – Detects running processes and their memory usage.
+- **FileMonitor** – Monitors file system activities using Linux `inotify`.
+- **Logger** – Records INFO and ALERT messages with timestamps.
+
+The application uses Linux `/proc`, `inotify`, and filesystem APIs to collect monitoring information.
+
+## Technologies Used
+
+- C++
+- Linux
+- CMake
+- Linux `/proc`
+- Linux `inotify`
+- C++ STL
+- Multithreading
+- Mutex and synchronization
+- Git and GitHub
+
+## Requirements
+
+- Ubuntu/Linux
+- C++ compatible compiler
+- g++
 - CMake 3.10 or newer
-- pthread support
-
-📁 Project Structure
-
-smartMonitor/
-├── src/
-│   ├── main.cpp
-│   ├── system_monitor.cpp
-│   ├── process_monitor.cpp
-│   ├── file_monitor.cpp
-│   └── logger.cpp
-├── include/
-│   ├── system_monitor.h
-│   ├── process_monitor.h
-│   ├── file_monitor.h
-│   └── logger.h
-├── logs/
-│   └── activity.log
-├── tests/
-│   └── TEST_PLAN.md
-├── docs/
-│   └── PROJECT_DOCUMENTATION.md
-├── CMakeLists.txt
-├── .gitignore
-└── README.md
+- POSIX Threads
